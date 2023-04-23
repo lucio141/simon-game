@@ -68,6 +68,16 @@ $('body').keypress(function () {
     }
 });
 
+$('#level-title').click(function () { 
+    if(!playing){
+        gamePattern = [];
+        userClickedPattern = [];
+        playing = true;
+        $('#level-title').text("Level " + level);
+        NextSequence();
+    }
+});
+
 function playPattern(index){
     setTimeout(function(){
         playSound(gamePattern[index]);
